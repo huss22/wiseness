@@ -28,10 +28,10 @@ $(document).ready(function() {
                 } else if (x == "Incorrect password!") {
                     alert("Check Username or Email");
                 } else {
-                    $('.form_result').append('Logged in with UID:' + x + ' <a id = "logout">Logout</a>');
+                    $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
+                    $('.form_result').show();
                     $('#owl-homeslider').hide();
                     $('#start').show();
-                    window.location.href = window.location.href;
                 }
             }
         });
@@ -62,28 +62,35 @@ $(document).ready(function() {
                 } else if (x == "Couldn't register user, please try again'") {
                     alert("Couldn't register user, please try again'");
                 } else {
-                    $('.form_result').append('Logged in with UID:' + x + ' <a id = "logout">Logout</a>');
+                    $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
+                    $('.form_result').show();
                     $('#owl-homeslider').hide();
                     $('#start').show();
-                    window.location.href = window.location.href;
                 }
             }
         });
         return false;
     }
-
-})
-
-
-$(document).ready(function() {
-
     $("#owl-homeslider").owlCarousel({
 
         slideSpeed: 1000,
         paginationSpeed: 1000,
         singleItem: true
     });
+    var x = localStorage.getItem("UID");
+    if (x == null) {} else {
 
+        $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
+        $('.form_result').show();
+        $('#owl-homeslider').hide();
+        $('#start').show();
+    }
+    $('.logout').on('click', function() {
+        localStorage.removeItem("UID");
+        $('.form_result').hide();
+        $('#owl-homeslider').show();
+        $('#start').hide();
+    });
 
 });
 
@@ -92,41 +99,16 @@ $(document).on("swipeleft", ".transaction-summary-info", function(event) {
         // These are the classnames used for the CSS transition
         dir = event.type === "swipeleft" ? "left" : "right",
         // Check if the browser supports the transform (3D) CSS transition
-        transition = $.support.cssTransform3d ? dir : false;
-    Hello();
+        transition = $.support.cssTransform3d ? dir : false; {
+        $("#leftsummarypanel").panel("open");
+    }
 });
-
-function Hello() {
-
-    alert('left');
-}
-
 $(document).on("swiperight", ".transaction-summary-info", function(event) {
     var listitem = $(this),
         // These are the classnames used for the CSS transition
         dir = event.type === "swipeleft" ? "left" : "right",
         // Check if the browser supports the transform (3D) CSS transition
-        transition = $.support.cssTransform3d ? dir : false;
-    right();
-});
-
-function right() {
-
-    alert('right');
-}
-
-$(document).ready(function() {
-    var x = localStorage.getItem("UID");
-    if (x == null) {} else {
-
-        $('.form_result').append('Logged in with UID:' + x + ' <a id = "logout">Logout</a>');
-        $('#owl-homeslider').hide();
-        $('#start').show();
+        transition = $.support.cssTransform3d ? dir : false; {
+        $("#rightsummarypanel").panel("open");
     }
-    $('#logout').on('click', function() {
-        localStorage.removeItem("UID");
-        window.location.href = window.location.href;
-    });
-
-
-})
+});
