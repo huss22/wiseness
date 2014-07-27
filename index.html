@@ -28,7 +28,7 @@
 		</div>
 
 		<div id="homediv" role="main" class="ui-content">
-		<div class="form_result"></div>
+		<div class="form_result" style="display:none"><a class = "logout"> Logout</a></div>
 		<a href="#table" data-transition="flip" id="start" class = "ui-btn" style = "display:none">Start program</a>
 			<div id="owl-homeslider" class="owl-carousel">
 			  <div id="appaccess" class="appaccess">
@@ -91,10 +91,85 @@
 	
 	<div data-role="page" id="table">
 		<a href="#log" data-transition="flip"> Back</a>
-		
-			 
+		<a href="#leftsummarypanel" data-display="reveal"> left</a>
+		<a href="#rightsummarypanel"> right</a>
+
+		<div class="inputpanels" data-role="panel"  data-display="reveal" id="leftsummarypanel">
+			
+		    <div class="transaction-details">
+
+				<a class="item-in-detailed" href="#popupname" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">1. Name: </span>
+					<span class="names-in-detailed">News Limited </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">2. Date: </span>
+					<span class="names-in-detailed">27-July-2014 </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">3. Major Category: </span>
+					<span class="names-in-detailed">Income </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">4. Minor Category: </span>
+					<span class="names-in-detailed">Please Select (optional) </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">5. Amount: </span>
+					<span class="names-in-detailed">$2,000 </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#popupdetailphoto" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">6. Picture: </span>
+					<span class="names-in-detailed">Insert Picture </span>
+				</a>
+
+				<div data-role="popup" id="popupdetailphoto" data-theme="a" class="ui-corner-all detailed-addon">
+					<a href="" class="ui-btn ui-icon-camera ui-btn-icon-left">Take Photo</a>
+					<br>
+					<input type="file" capture="camera" accept="image/*" id="takePictureField">
+				</div>	
+
+				<div data-role="popup" id="popupname" data-theme="a" class="ui-corner-all detailed-addon">
+					Edit the content
+					<br>
+					Add to list
+					<br>
+					Do something else
+				</div>	
+
+			</div>
+		</div><!-- /panel -->
+
+		<div class="inputpanels" data-role="panel"  data-display="reveal" id="rightsummarypanel" data-position="right">
+			<h3>Right Panel will accept the transaction</h3>
+			<p>We can no input more information about the transaction, load a photo and add more details, all which are optional to do so.</p>
+
+			<div class="transaction-details">
+
+				<a class="item-in-detailed" href="#popupname" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">1. Name: </span>
+					<span class="names-in-detailed">News Limited </span>
+				</a>
+
+				<div data-role="popup" id="popupname" data-theme="a" class="ui-corner-all detailed-addon">
+					Edit the content
+					<br>
+					Add to list
+					<br>
+					Do something else
+				</div>	
+
+			</div>
+
+		</div><!-- /panel -->
+
 		<form>
-		    <input id="transaction-summary-search" data-type="search">
+		    <input id="transaction-summary-search" data-type="search" placeholder="Seach for transactions" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Seach for transactions'" data-shadow="false">
 		</form>
 	
 		<div class="transaction-summary-head" class="elements" data-filter="true" data-input="#transaction-summary-search">
@@ -136,64 +211,9 @@
 
 				</div>
 			</div>
-			<div class="transaction-summary-info ui-shadow">
-				this is it.
-			</div>
 		</div>
 
-
-
-
-
-		<table data-role="table" id="transaction-summary" data-input="#transaction-summary-search" data-mode="columntoggle" data-column-btn-text="More Fields" data-column-btn-theme="a" class="transaction-summary ui-shadow table-stroke ui-responsive">
-
-			<thead>
-		        <tr>
-		            <th data-priority="1">Date</th>
-		            <th data-priority="2">Supplier</th>
-		            <th data-priority="3">Major Category</th>
-		            <th data-priority="4">Amount</th>
-		        </tr>
-		    </thead>
-			
-			<tbody>
-			<tr class="transaction-summary-row">
-				<td>
-					27-July-2014
-				</td>
-				<td>
-					News Limited
-				</td>
-				<td>
-					Income
-				</td>
-				<td>
-					$2,000
-				</td>
-
-			</tr>
-
-			<tr class="transaction-summary-row">
-				<td>
-					27-July-2014
-				</td>
-				<td>
-					News Limited
-				</td>
-				<td>
-					Income
-				</td>
-				<td>
-					$2,000
-				</td>
-
-			</tr>
-			</tbody>	
-		</table>
-
-
 	</div>
-
 
 <script src = 'js/readyfunctions.js'></script>
 <script src="js/jquery.form-validator.js "></script>
