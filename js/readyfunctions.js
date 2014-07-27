@@ -89,7 +89,8 @@ $(document).ready(function() {
         $('#owl-homeslider').show();
         $('#start').hide();
     });
-    $('#cameraphoto').on('click', function() {
+
+    function takephoto() {
 
         navigator.camera.getPicture(onSuccess, onFail, {
             quality: 50,
@@ -105,25 +106,13 @@ $(document).ready(function() {
         function onFail(message) {
             alert('Failed because: ' + message);
         }
-    })
+    }
 
 });
 
 $(document).on("swipeleft", ".transaction-summary-info", function(event) {
-    var listitem = $(this),
-        // These are the classnames used for the CSS transition
-        dir = event.type === "swipeleft" ? "left" : "right",
-        // Check if the browser supports the transform (3D) CSS transition
-        transition = $.support.cssTransform3d ? dir : false; {
-        $("#leftsummarypanel").panel("open");
-    }
+    $("#leftsummarypanel").panel("open");
 });
 $(document).on("swiperight", ".transaction-summary-info", function(event) {
-    var listitem = $(this),
-        // These are the classnames used for the CSS transition
-        dir = event.type === "swipeleft" ? "left" : "right",
-        // Check if the browser supports the transform (3D) CSS transition
-        transition = $.support.cssTransform3d ? dir : false; {
-        $("#rightsummarypanel").panel("open");
-    }
+    $("#rightsummarypanel").panel("open");
 });
