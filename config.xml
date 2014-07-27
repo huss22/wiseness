@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.wiseowl"
+        version   = "1.0.0">
+
+    <name>Wisest Owl</name>
+
+    <description>
+        The Smart Wise Owl
+    </description>
+
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+</widget>
