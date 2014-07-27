@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    $('#tableload').load('views/Table.html');
-
     $('#loginbtn').on('click', $.validate({
         form: '#loginuser',
         modules: 'security',
@@ -91,6 +89,23 @@ $(document).ready(function() {
         $('#owl-homeslider').show();
         $('#start').hide();
     });
+    $('#cameraphoto').on('click', function() {
+
+        navigator.camera.getPicture(onSuccess, onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
+
+        function onSuccess(imageURI) {
+            var image = document.getElementById('myImage');
+            image.src = imageURI;
+            alert('imageURI');
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+    })
 
 });
 
