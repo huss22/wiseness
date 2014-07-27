@@ -47,7 +47,8 @@ body{}
 .transaction-summary-info{
 	
 	background-color: #fff;
-	margin-bottom:5px;
+	margin-bottom:10px;
+	cursor: pointer;
 }
 
 .summary-name{
@@ -75,4 +76,60 @@ body{}
 
 .summary-amount{
 	float: right;
+}
+
+.ui-panel.inputpanels{
+
+	background-color: #168ccc;
+	padding:5px;
+	text-shadow:0 0px 0 #fff;
+	color: #fff;
+	border:1px solid #e0e0e0;
+}
+
+div.transaction-summary-info.swipeleft{
+	background-color: #4dae4b;
+}
+
+#transaction-summary-search{
+	background-color: #fff;
+	text-shadow:0 0px 0 #fff;
+	color: #168ccc;
+}
+.ui-input-has-clear {
+padding-right: 0;
+}
+
+#transaction-summary-search:focus{
+	background-color: #4dae4b;
+	text-shadow:0 0px 0 #fff;
+	color: #fff;
+}
+
+.item-in-detailed .names-in-detailed{
+	color:#fff;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight:normal;
+}
+
+.detailed-addon{
+	color:#168ccc;
+	padding:10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
