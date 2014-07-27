@@ -1,0 +1,78 @@
+body{}
+
+.ui-content{
+	height: 100%;
+	
+}
+
+#appmenu{
+	position: fixed;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+#logo{
+	text-align: center;
+	color: #168ccc;
+}
+
+.middle{
+	text-align: center;
+}
+
+#loginbtn, #registerbtn{
+	background-color: #fff;
+	color:#168ccc;
+	
+}
+
+#loginbtn:hover, #registerbtn:hover{
+	background-color: #168ccc;
+	color:#fff;
+	text-shadow:0 0px 0 #fff;
+}
+
+.transaction-summary-row td{
+	line-height: 3em;
+	font-size: 12px;
+}
+
+.transaction-summary-head{
+	margin-left:5px;
+	margin-right: 5px;
+	
+	
+}
+.transaction-summary-info{
+	
+	background-color: #fff;
+	margin-bottom:5px;
+}
+
+.summary-name{
+	color: #fff;
+	background-color: #168ccc;
+	text-align: center;
+	text-shadow:0 0px 0 #fff;
+	padding: 5px 5px 5px 5px;
+}
+
+.summary-info{
+	border:1px solid #e0e0e0;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+
+.summary-date, .summary-category, .summary-amount{
+	
+	text-shadow:0 0px 0 #fff;
+
+}
+.summary-date{
+	float:left;
+}
+
+.summary-amount{
+	float: right;
+}

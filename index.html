@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Demos</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.3.min.js"></script>
+	<!-- Important Owl stylesheet -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	 
+	<!-- Default Theme -->
+	<link rel="stylesheet" href="css/owl.theme.css">
+	
+	 
+	<!-- Include js plugin -->
+	<script src="js/owl.carousel.js"></script>
+
+</head>
+<body>
+
+	<div id="log" data-role="page">
+		<div data-role="header">
+			<p id="logo">Wise Owl</p>
+		</div>
+
+		<div id="homediv" role="main" class="ui-content">
+		<div class="form_result"></div>
+		<a href="#table" data-transition="flip" id="start" class = "ui-btn" style = "display:none">Start program</a>
+			<div id="owl-homeslider" class="owl-carousel">
+			  <div id="appaccess" class="appaccess">
+			  	<div data-role="tabs" id="tabs">
+				  <div data-role="navbar">
+				    <ul>
+				      <li ><a class="ui-btn-active" href="#homelogin" data-ajax="false">Log In</a></li>
+				      <li><a href="#homeregister" data-ajax="false">Register</a></li>
+				    </ul>
+				  </div>
+
+				  <div id="homelogin" class="ui-body-d ui-content">
+				  <form id = 'loginuser'>
+				   <div data-role="fieldcontain">
+						<label for="loginname">Email:</label>
+						<input type="text" placeholder="Email" name="loginname" id="loginname" value="" data-validation="email"/>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="loginpass">Password:</label>
+						<input type="password" placeholder="Password" name="loginpass" id="loginpass" value="" data-validation="length" data-validation-length = "1-12"/>
+					</div>
+
+					<div class="middle">
+						<button type="submit" id="loginbtn" value="Log In">Log In </button>
+					</div>
+					
+					</form>
+				  </div>
+				   <form id = 'registeruser'>
+				  <div id="homeregister">
+
+				    <div data-role="fieldcontain">
+						<label for="registeremail">Email:</label>
+						<input type="email" placeholder="Email" name="registername" id="registername" value="" data-validation="email"/>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="loginpass">Password:</label>
+						<input type="password" placeholder="Password" name="registerpass" id="registerpass" value="" data-validation="length" data-validation-length = "1-12"/>
+					</div>
+
+					<button type="submit" id="registerbtn" value="Register">Register</button>
+
+				  </div>
+				  	</form>
+				</div>
+
+			  </div>
+			  <div> Some item to go here</div>
+			  <div> Your Content </div>
+			  
+			  
+			</div>
+		</div>
+		<div id="appmenu" data-role="footer">
+			<p id="logo">...</p>
+		</div>
+	</div>
+	
+	<div data-role="page" id="table">
+		<a href="#log" data-transition="flip"> Back</a>
+		
+			 
+		<form>
+		    <input id="transaction-summary-search" data-type="search">
+		</form>
+	
+		<div class="transaction-summary-head" class="elements" data-filter="true" data-input="#transaction-summary-search">
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">News Limited</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Income
+					</span>
+					<span class="summary-category">
+						- Salary
+					</span>
+					<span class="summary-amount">
+						$2,000
+					</span>
+
+				</div>
+			</div>
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">Vodafone</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Expense
+					</span>
+					<span class="summary-category">
+						- Bills
+					</span>
+					<span class="summary-amount">
+						$100
+					</span>
+
+				</div>
+			</div>
+			<div class="transaction-summary-info ui-shadow">
+				this is it.
+			</div>
+		</div>
+
+
+
+
+
+		<table data-role="table" id="transaction-summary" data-input="#transaction-summary-search" data-mode="columntoggle" data-column-btn-text="More Fields" data-column-btn-theme="a" class="transaction-summary ui-shadow table-stroke ui-responsive">
+
+			<thead>
+		        <tr>
+		            <th data-priority="1">Date</th>
+		            <th data-priority="2">Supplier</th>
+		            <th data-priority="3">Major Category</th>
+		            <th data-priority="4">Amount</th>
+		        </tr>
+		    </thead>
+			
+			<tbody>
+			<tr class="transaction-summary-row">
+				<td>
+					27-July-2014
+				</td>
+				<td>
+					News Limited
+				</td>
+				<td>
+					Income
+				</td>
+				<td>
+					$2,000
+				</td>
+
+			</tr>
+
+			<tr class="transaction-summary-row">
+				<td>
+					27-July-2014
+				</td>
+				<td>
+					News Limited
+				</td>
+				<td>
+					Income
+				</td>
+				<td>
+					$2,000
+				</td>
+
+			</tr>
+			</tbody>	
+		</table>
+
+
+	</div>
+
+
+<script src = 'js/readyfunctions.js'></script>
+<script src="js/jquery.form-validator.js "></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<div data-role="page" id="table">
+		<a href="#log" data-transition="flip"> Back</a>
+		
+			  <div class="form_result"></div>
+		<form>
+		    <input id="transaction-summary-search" data-type="search">
+		</form>
+	
+		<div class="transaction-summary-head" class="elements" data-filter="true" data-input="#transaction-summary-search">
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">News Limited</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Income
+					</span>
+					<span class="summary-category">
+						- Salary
+					</span>
+					<span class="summary-amount">
+						$2,000
+					</span>
+
+				</div>
+			</div>
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">Vodafone</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Expense
+					</span>
+					<span class="summary-category">
+						- Bills
+					</span>
+					<span class="summary-amount">
+						$100
+					</span>
+
+				</div>
+			</div>
+			<div class="transaction-summary-info ui-shadow">
+				this is it.
+			</div>
+		</div>
+
+
+
+
+
+		<table data-role="table" id="transaction-summary" data-input="#transaction-summary-search" data-mode="columntoggle" data-column-btn-text="More Fields" data-column-btn-theme="a" class="transaction-summary ui-shadow table-stroke ui-responsive">
+
+			<thead>
+		        <tr>
+		            <th data-priority="1">Date</th>
+		            <th data-priority="2">Supplier</th>
+		            <th data-priority="3">Major Category</th>
+		            <th data-priority="4">Amount</th>
+		        </tr>
+		    </thead>
+			
+			<tbody>
+			<tr class="transaction-summary-row">
+				<td>
+					27-July-2014
+				</td>
+				<td>
+					News Limited
+				</td>
+				<td>
+					Income
+				</td>
+				<td>
+					$2,000
+				</td>
+
+			</tr>
+
+			<tr class="transaction-summary-row">
+				<td>
+					27-July-2014
+				</td>
+				<td>
+					News Limited
+				</td>
+				<td>
+					Income
+				</td>
+				<td>
+					$2,000
+				</td>
+
+			</tr>
+			</tbody>	
+		</table>
+
+
+	</div>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+ 
+	  $("#owl-homeslider").owlCarousel({
+		
+		slideSpeed: 1000,
+		paginationSpeed: 1000,
+		singleItem: true
+	  });
+	  
+	 
+	});
+	</script>
+
+	<script type="text/javascript">
+		$( document ).on( "swipeleft", ".transaction-summary-info", function( event ) {
+        var listitem = $( this ),
+            // These are the classnames used for the CSS transition
+            dir = event.type === "swipeleft" ? "left" : "right",
+            // Check if the browser supports the transform (3D) CSS transition
+            transition = $.support.cssTransform3d ? dir : false;
+            Hello();
+    });
+		function Hello(){
+
+			alert ('left');
+		}
+
+			$( document ).on( "swiperight", ".transaction-summary-info", function( event ) {
+        var listitem = $( this ),
+            // These are the classnames used for the CSS transition
+            dir = event.type === "swipeleft" ? "left" : "right",
+            // Check if the browser supports the transform (3D) CSS transition
+            transition = $.support.cssTransform3d ? dir : false;
+            right();
+    });
+		function right(){
+
+			alert ('right');
+		}
+	</script>
