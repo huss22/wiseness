@@ -111,8 +111,8 @@ $(document).ready(function() {
 });
 
 $(document).on("swipeleft", ".transaction-summary-info", function(event) {
-    $("#leftsummarypanel").panel("open");
+    $("#rightsummarypanel").panel("open");
 });
 $(document).on("swiperight", ".transaction-summary-info", function(event) {
-    $("#rightsummarypanel").panel("open");
+    $("#leftsummarypanel").panel("open");
 });
