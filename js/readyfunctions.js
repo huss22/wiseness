@@ -110,9 +110,9 @@ $(document).ready(function() {
 
 });
 
-$(document).on("swipeleft", ".transaction-summary-info", function(event) {
+$(document).on("swipeleft", ".transaction-summary-info.ui-shadow", function(event) {
     $("#rightsummarypanel").panel("open");
 });
-$(document).on("swiperight", ".transaction-summary-info", function(event) {
+$(document).on("swiperight", ".transaction-summary-info.ui-shadow", function(event) {
     $("#leftsummarypanel").panel("open");
 });
