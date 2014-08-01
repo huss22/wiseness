@@ -11,6 +11,15 @@ $(document).ready(function() {
         }
     }));
 
+    var x = localStorage.getItem("UID");
+    if (x == null) {} else {
+
+        $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
+        $('.form_result').show();
+        $('#owl-homeslider').remove();
+        $('#start').show();
+    }
+
     function submitloginForm() {
         $.ajax({
             type: 'POST',
@@ -75,19 +84,12 @@ $(document).ready(function() {
         paginationSpeed: 1000,
         singleItem: true
     });
-    var x = localStorage.getItem("UID");
-    if (x == null) {} else {
-
-        $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
-        $('.form_result').show();
-        $('#owl-homeslider').hide();
-        $('#start').show();
-    }
     $('.logout').on('click', function() {
         localStorage.removeItem("UID");
         $('.form_result').hide();
         $('#owl-homeslider').show();
         $('#start').hide();
+        document.location.href = document.location.href;
     });
 
     function takephoto() {
@@ -109,10 +111,51 @@ $(document).ready(function() {
     }
 
 });
+//CONFIG:
+var correctPinNumber = "1234";
+var url = document.location.href;
 
-$(document).on("swipeleft", ".transaction-summary-info.ui-shadow", function(event) {
-    $("#rightsummarypanel").panel("open");
-});
-$(document).on("swiperight", ".transaction-summary-info.ui-shadow", function(event) {
-    $("#leftsummarypanel").panel("open");
-});
+//OTHER
+var totalAttempts = 0;
+
+
+function addNumber(value) {
+    var pin = document.getElementById("pinNumber");
+    pin.value += value;
+}
+
+function removeNumber(value) {
+    var pin = document.getElementById("pinNumber");
+
+    var x = pin.value.substring(0, pin.value.length - 1);
+    pin.value = x;
+}
+
+function clearPad() {
+    document.getElementById("pinNumber").value = "";
+}
+
+function checkPinNumber() {
+    //get values from doc.
+    var formArea = document.getElementById("formArea");
+    var errorArea = document.getElementById("errorMessage");
+    var pinNumber = document.getElementById("pinNumber").value;
+
+    //validate PIN.
+    if (pinNumber == correctPinNumber) {
+        document.location.href = './initialload.html';
+        return;
+    } else {
+        errorArea.innerHTML = "Incorrect Pin, please try again";
+        clearPad()
+    }
+    //add one more access attempt;
+    totalAttempts++;
+
+    if (totalAttempts == 3) {
+        formArea.style.display = "none";
+        errorArea.innerHTML = "Too many attempts.. sorry.";
+        clearPad()
+    }
+
+}
