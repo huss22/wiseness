@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile Demos</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+	<div id="log" data-role="page">
+		<div data-role="header">
+			<p id="logo">Wise Owl</p>
+		</div>
+
+		<div id="homediv" role="main" class="ui-content">
+		<div class="form_result" style="display:none"><a class = "logout"> Logout</a></div>
+		<a href="#table" data-transition="flip" id="start" class = "ui-btn" style = "display:none">Start program</a>
+			<div id="owl-homeslider" class="owl-carousel">
+			  <div id="appaccess" class="appaccess">
+			  	<div data-role="tabs" id="tabs">
+				  <div data-role="navbar">
+				    <ul>
+				      <li ><a class="ui-btn-active" href="#homelogin" data-ajax="false">Log In</a></li>
+				      <li><a href="#homeregister" data-ajax="false">Register</a></li>
+				    </ul>
+				  </div>
+
+				  <div id="homelogin" class="ui-body-d ui-content">
+				  <form id = 'loginuser'>
+				   <div data-role="fieldcontain">
+						<label for="loginname">Email:</label>
+						<input type="text" placeholder="Email" name="loginname" id="loginname" value="" data-validation="email"/>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="loginpass">Password:</label>
+						<input type="password" placeholder="Password" name="loginpass" id="loginpass" value="" data-validation="length" data-validation-length = "1-12"/>
+					</div>
+
+					<div class="middle">
+						<button type="submit" id="loginbtn" value="Log In">Log In </button>
+					</div>
+					
+					</form>
+				  </div>
+				   <form id = 'registeruser'>
+				  <div id="homeregister">
+
+				    <div data-role="fieldcontain">
+						<label for="registeremail">Email:</label>
+						<input type="email" placeholder="Email" name="registername" id="registername" value="" data-validation="email"/>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="loginpass">Password:</label>
+						<input type="password" placeholder="Password" name="registerpass" id="registerpass" value="" data-validation="length" data-validation-length = "1-12"/>
+					</div>
+
+					<button type="submit" id="registerbtn" value="Register">Register</button>
+
+				  </div>
+				  	</form>
+				</div>
+
+			  </div>
+			  <div> Some item to go here</div>
+			  <div> Your Content </div>
+			  
+			  
+			</div>
+		</div>
+		<div id="appmenu" data-role="footer">
+			<p id="logo">...</p>
+		</div>
+	</div>
+	
+	<div data-role="page" id="table">
+		<a href="#log" data-transition="flip"> Back</a>
+		<a href="#leftsummarypanel" data-display="reveal"> left</a>
+		<a href="#rightsummarypanel"> right</a>
+
+		<div class="inputpanels" data-role="panel"  data-display="reveal" id="leftsummarypanel">
+			
+		    <div class="transaction-details">
+
+				<a class="item-in-detailed" href="#popupname" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">1. Name: </span>
+					<span class="names-in-detailed">News Limited </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">2. Date: </span>
+					<span class="names-in-detailed">27-July-2014 </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">3. Major Category: </span>
+					<span class="names-in-detailed">Income </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">4. Minor Category: </span>
+					<span class="names-in-detailed">Please Select (optional) </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">5. Amount: </span>
+					<span class="names-in-detailed">$2,000 </span>
+				</a>
+				<br>
+				<a class="item-in-detailed" href="#popupdetailphoto" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">6. Picture: </span>
+					<span class="names-in-detailed">Insert Picture </span>
+				</a>
+
+				<div data-role="popup" id="popupdetailphoto" data-theme="a" class="ui-corner-all detailed-addon">
+					<a href="" class="ui-btn ui-icon-camera ui-btn-icon-left" onclick="takephoto()">Take Photo</a>
+					<br>
+					<input type="file" capture="camera" accept="image/*" id="takePictureField">
+				</div>	
+
+				<div data-role="popup" id="popupname" data-theme="a" class="ui-corner-all detailed-addon">
+					Edit the content
+					<br>
+					Add to list
+					<br>
+					Do something else
+				</div>	
+
+			</div>
+		</div><!-- /panel -->
+
+		<div class="inputpanels" data-role="panel"  data-display="reveal" id="rightsummarypanel" data-position="right">
+			<h3>Right Panel will accept the transaction</h3>
+			<p>We can no input more information about the transaction, load a photo and add more details, all which are optional to do so.</p>
+
+			<div class="transaction-details">
+
+				<a class="item-in-detailed" href="#popupname" data-rel="popup" data-position-to="window" data-transition="pop">
+					<span class="names-in-detailed">1. Name: </span>
+					<span class="names-in-detailed">News Limited </span>
+				</a>
+
+				<div data-role="popup" id="popupname" data-theme="a" class="ui-corner-all detailed-addon">
+					Edit the content
+					<br>
+					Add to list
+					<br>
+					Do something else
+				</div>	
+
+			</div>
+
+		</div><!-- /panel -->
+
+		<form>
+		    <input id="transaction-summary-search" data-type="search" placeholder="Seach for transactions" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Seach for transactions'" data-shadow="false">
+		</form>
+	
+		<div class="transaction-summary-head" class="elements" data-filter="true" data-input="#transaction-summary-search">
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">News Limited</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Income
+					</span>
+					<span class="summary-category">
+						- Salary
+					</span>
+					<span class="summary-amount">
+						$2,000
+					</span>
+
+				</div>
+			</div>
+
+			<div class="transaction-summary-info ui-shadow">
+				<div class="summary-name">Vodafone</div>
+				<div class="summary-info">
+					<span class="summary-date">
+						27-July-2014
+					</span>
+					<span class="summary-category">
+						Expense
+					</span>
+					<span class="summary-category">
+						- Bills
+					</span>
+					<span class="summary-amount">
+						$100
+					</span>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
