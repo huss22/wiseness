@@ -50,7 +50,7 @@ background-image:url('http://www.iclarified.com/images/news/31430/128159/128159.
 
 <div id="formArea" class = 'pinarea'>
   <p>
-    <input type="text" name="pinNumber" id="pinNumber" />
+    <input type="password" name="pinNumber" id="pinNumber" />
     <br />
     <input type="button" class="numberButtons"  value="1" onclick="addNumber(this.value)" data-inline = true/>
     <input type="button" class="numberButtons"  value="2" onclick="addNumber(this.value)"  data-inline = true/>
@@ -66,11 +66,11 @@ background-image:url('http://www.iclarified.com/images/news/31430/128159/128159.
     <br /><br />
     <input type="button" class="numberButtons"  value="0" onclick="addNumber(this.value)"  data-inline = true/>
 
-     <input type="button" class="numberButtons"  value="&#8617;" onclick="removeNumber(this.value)"  data-inline = true/>
+     <input type="button" class="numberButtons"  value="&#8617;" onclick="clearPad()"  data-inline = true/>
      
   </p>
   <p>
-    <input type="submit" name="pinButton" id="pinButton" value = "&#8627;" onclick="pinman()" style="width:165px"/>
+    <input type="submit" name="pinButton" id="pinButton" value = "&#8627;" onclick="pinman()"/>
   </p>
   </div>
 <div id="errorMessage"></div>
