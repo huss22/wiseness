@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    var x = localStorage.getItem("UID");
+    if (x == null) {} else {
+        $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
+        $('.form_result').show();
+        $('#owl-homeslider').remove();
+        $('#start').show();
+    }
+
     $('#loginbtn').on('click', $.validate({
         form: '#loginuser',
         modules: 'security',
@@ -10,15 +18,6 @@ $(document).ready(function() {
             return submitloginForm();
         }
     }));
-
-    var x = localStorage.getItem("UID");
-    if (x == null) {} else {
-
-        $('.form_result').html('Logged in with UID:' + x + '<a class = "logout"> Logout </a>');
-        $('.form_result').show();
-        $('#owl-homeslider').remove();
-        $('#start').show();
-    }
 
     function submitloginForm() {
         $.ajax({
@@ -89,7 +88,7 @@ $(document).ready(function() {
         $('.form_result').hide();
         $('#owl-homeslider').show();
         $('#start').hide();
-        document.location.href = document.location.href;
+        document.location.href = './index.html';
     });
 
     function takephoto() {
@@ -111,10 +110,8 @@ $(document).ready(function() {
     }
 
 });
-//CONFIG:
-var correctPinNumber = "1234";
-var url = document.location.href;
 
+localStorage.setItem("correctPinNumber", "1234");
 //OTHER
 var totalAttempts = 0;
 
@@ -124,23 +121,16 @@ function addNumber(value) {
     pin.value += value;
 }
 
-function removeNumber(value) {
-    var pin = document.getElementById("pinNumber");
-
-    var x = pin.value.substring(0, pin.value.length - 1);
-    pin.value = x;
-}
-
 function clearPad() {
     document.getElementById("pinNumber").value = "";
 }
 
-function checkPinNumber() {
+function pinman() {
     //get values from doc.
+    var correctPinNumber = localStorage.getItem("correctPinNumber");
     var formArea = document.getElementById("formArea");
     var errorArea = document.getElementById("errorMessage");
     var pinNumber = document.getElementById("pinNumber").value;
-
     //validate PIN.
     if (pinNumber == correctPinNumber) {
         document.location.href = './initialload.html';
