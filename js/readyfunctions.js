@@ -133,7 +133,7 @@ function pinman() {
     var pinNumber = document.getElementById("pinNumber").value;
     //validate PIN.
     if (pinNumber == correctPinNumber) {
-        document.location.href = './initialload.html';
+        document.location.href = './geolocation.html';
         return;
     } else {
         errorArea.innerHTML = "Incorrect Pin, please try again";
