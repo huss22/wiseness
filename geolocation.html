@@ -3,6 +3,7 @@
 <body onload = 'lastlocation()'>
 <p id="demo">Click the button to get your coordinates:</p>
 <button onclick="getLocation()">Post Location</button>
+<div id="mapholder"></div>
 <div id = 'lastlocation'>Your Previous Locations are:<br> </div>
 <script>
 function lastlocation(){
@@ -20,6 +21,11 @@ function showPosition(position) {
 	localStorage.setItem("location", "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
     x.innerHTML = "<br>Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude; 	  
+	var latlon = position.coords.latitude+","+position.coords.longitude;
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+	document.getElementById("lastlocation").innerHTML += localStorage.location;	
 }
 
 function showError(error) {
