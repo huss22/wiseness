@@ -8,20 +8,20 @@
 function lastlocation(){
 	document.getElementById("lastlocation").innerHTML = "Your Last location was " + localStorage.location;					
 }
-var x=document.getElementById("demo");
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition,showError);
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
-  localStorage.setItem("location", "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
-  x.innerHTML= localstorage.location;	
-  }
+}
+function showPosition(position) {
+	localStorage.setItem("location", "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 	  
+}
+
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
