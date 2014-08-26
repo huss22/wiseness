@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload = 'lastlocation()'>
 <p id="demo">Click the button to get your coordinates:</p>
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">Post Location</button>
+<div id = 'lastlocation'> </div>
 <script>
+function lastlocation(){
+	document.getElementById("lastlocation").innerHTML = "Your Last location was " + localStorage.location;					
+}
 var x=document.getElementById("demo");
 function getLocation()
   {
   if (navigator.geolocation)
     {
-    navigator.geolocation.watchPosition(showPosition,showError);
+    navigator.geolocation.getCurrentPosition(showPosition,showError);
     }
   else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
 function showPosition(position)
   {
-  x.innerHTML="Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;	
+  localStorage.setItem("location", "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+  x.innerHTML= localstorage.location;	
   }
 function showError(error) {
     switch(error.code) {
