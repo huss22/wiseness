@@ -3,10 +3,10 @@
 <body onload = 'lastlocation()'>
 <p id="demo">Click the button to get your coordinates:</p>
 <button onclick="getLocation()">Post Location</button>
-<div id = 'lastlocation'> </div>
+<div id = 'lastlocation'>Your Previous Locations are:<br> </div>
 <script>
 function lastlocation(){
-	document.getElementById("lastlocation").innerHTML = "Your Last location was " + localStorage.location;					
+	document.getElementById("lastlocation").innerHTML += localStorage.location;					
 }
 var x = document.getElementById("demo");
 function getLocation() {
@@ -18,7 +18,7 @@ function getLocation() {
 }
 function showPosition(position) {
 	localStorage.setItem("location", "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    x.innerHTML = "<br>Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude; 	  
 }
 
